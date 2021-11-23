@@ -13,4 +13,16 @@ public class AcervoController {
        return acervo;
    }
 
+   public void imprimir(){
+       System.out.println("\n*************************************");
+       System.out.println("LIVROS DA DOUGLATECA");
+       System.out.println("*************************************");
+       for(Livro itemLivro: acervo.getLivros()){
+           System.out.println("\nTítulo: " + itemLivro.getTituloLivro());
+           System.out.println("Autor: " + itemLivro.getAutorLivro());
+           System.out.println("Data de publicação: " + itemLivro.getAnoPublicacao());
+           System.out.println("Editora: " + itemLivro.getEditoraLivro());
+           System.out.println("____________________________________________");
+       }
+   }
 }

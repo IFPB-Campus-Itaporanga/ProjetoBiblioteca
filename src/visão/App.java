@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        char comando, idGenero;
         int anoPublicaoLivro;
-        char comando;
         String tituloLivro, autorLivro, editoraLivro;
         Livro livro;
         AcervoController acervoController = new AcervoController();
@@ -30,9 +30,16 @@ public class App {
             System.out.println("Digite o ano de publicação:");
             anoPublicaoLivro = leitor.nextInt();
 
-            livro = new Livro(tituloLivro,anoPublicaoLivro,autorLivro,editoraLivro);
+            System.out.println("Digite o gênero do Livro \n" +
+                    "    1 p/ ROMANCE,\n" +
+                    "    2 p/ SCIFI,\n" +
+                    "    3 p/ TERROR,\n" +
+                    "    4 p/ BIOGRAFIA");
+            idGenero = leitor.next().charAt(0);
 
+            livro = new Livro(tituloLivro,anoPublicaoLivro,autorLivro,editoraLivro);
             acervoAtual = acervoController.cadastrarLivro(livro);
+
 
             System.out.println("Cadastar outro livro?(1-SIM,0-NÃO):");
             comando = leitor.next().charAt(0);
@@ -42,15 +49,6 @@ public class App {
 
         leitor.close();
 
-        System.out.println("\n*************************************");
-        System.out.println("LIVROS DA DOUGLATECA");
-        System.out.println("*************************************");
-        for(Livro itemLivro: acervoAtual.getLivros()){
-            System.out.println("\nTítulo: " + itemLivro.getTituloLivro());
-            System.out.println("Autor: " + itemLivro.getAutorLivro());
-            System.out.println("Data de publicação: " + itemLivro.getAnoPublicacao());
-            System.out.println("Editora: " + itemLivro.getEditoraLivro());
-            System.out.println("____________________________________________");
-        }
+        acervoController.imprimir();
     }
 }

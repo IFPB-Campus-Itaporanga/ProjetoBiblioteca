@@ -1,10 +1,13 @@
 package modelo;
 
+import visão.Genero;
+
 public class Livro {
     private String tituloLivro;
     private int anoPublicacao;
     private String autorLivro;
     private String editoraLivro;
+    private Genero genero;
 
     public Livro(String tituloLivro, String autorLivro){
         this.tituloLivro = tituloLivro;
@@ -16,6 +19,14 @@ public class Livro {
         this.anoPublicacao = anoPublicacao;
         this.autorLivro = autorLivro;
         this.editoraLivro = editoraLivro;
+    }
+
+    public Livro(String tituloLivro, int anoPublicacao, String autorLivro, String editoraLivro, Genero genero) {
+        this.tituloLivro = tituloLivro;
+        this.anoPublicacao = anoPublicacao;
+        this.autorLivro = autorLivro;
+        this.editoraLivro = editoraLivro;
+        this.genero = genero;
     }
 
     public String getTituloLivro() {
@@ -48,5 +59,13 @@ public class Livro {
 
     public void setEditoraLivro(String editoraLivro) {
         this.editoraLivro = editoraLivro;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
     }
 }
