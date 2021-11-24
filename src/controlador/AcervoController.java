@@ -22,6 +22,7 @@ public class AcervoController {
            System.out.println("Autor: " + itemLivro.getAutorLivro());
            System.out.println("Data de publicação: " + itemLivro.getAnoPublicacao());
            System.out.println("Editora: " + itemLivro.getEditoraLivro());
+           System.out.println("Genero: " + itemLivro.getGenero());
            System.out.println("____________________________________________");
        }
    }

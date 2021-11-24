@@ -16,10 +16,10 @@ public enum Genero {
         return idGenero;
     }
 
-    public Genero getGenero(int idGenero){
-        for (Genero g: Genero.values()) {
-            if (g.idGenero == idGenero) return g;
-        }
-        return null;
-    }
+//    public Genero getGenero(int idGenero){
+//        for (Genero g: Genero.values()) {
+//            if (g.idGenero == idGenero) return g;
+//        }
+//        return null;
+//    }
 }

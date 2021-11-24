@@ -7,9 +7,10 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        char comando, idGenero;
-        int anoPublicaoLivro;
+        char comando;
+        int anoPublicaoLivro, idGenero;
         String tituloLivro, autorLivro, editoraLivro;
+        Genero genero;
         Livro livro;
         AcervoController acervoController = new AcervoController();
         Acervo acervoAtual;
@@ -35,9 +36,10 @@ public class App {
                     "    2 p/ SCIFI,\n" +
                     "    3 p/ TERROR,\n" +
                     "    4 p/ BIOGRAFIA");
-            idGenero = leitor.next().charAt(0);
+            idGenero = leitor.nextInt();
+            genero = Genero.values()[idGenero-1];
 
-            livro = new Livro(tituloLivro,anoPublicaoLivro,autorLivro,editoraLivro);
+            livro = new Livro(tituloLivro,anoPublicaoLivro,autorLivro,editoraLivro,genero);
             acervoAtual = acervoController.cadastrarLivro(livro);
 
 
